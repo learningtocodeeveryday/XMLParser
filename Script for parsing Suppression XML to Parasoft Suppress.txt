@@ -343,7 +343,7 @@ void ignoreHeaderLines(std::ifstream& xmlFile)
 int main()
 {
     
-    std::string inputFile = "fullSuppressionFile.xml";
+    std::string inputFile = "suppressions.xml";
     std::string outputFile = "parasoft.suppress";
 
     std::ifstream xmlFile(inputFile);
