@@ -1,0 +1,381 @@
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include <vector>
+#include <cstdlib>
+
+// <?xml version="1.0" encoding="utf-8"?> (*********first line - encoding standard)
+// <Suppressions> (*******second line)
+// </Suppressions> (******last line)
+
+
+//********General Structure of Each Suppression
+//<Suppression  class="genericSuppressionLocation" context="/path/file.cpp ctxStrg="RestCtx">
+//     <TestResultSuppressionData>
+//         <Reason>NOT GE code</Reason>
+//         <User>swaminat</User>
+//         <Date>1553193102802</Date>
+//         <Message> Some Mesage 'some rule'</Message>
+//         <Severity>3</Severity>
+//         <RuleId>PREPROC-14</RuleId>
+//         <TestId/>
+//     </TestResultSuppressionData>
+// </Suppression>
+
+
+const int NUMBER_OF_HEADER_LINES = 2;
+const int VALID_DATA_PREFIX_SIZE = 7;
+const std::string CONTEXT_PREFIX = "<Suppression class";
+const std::string REASON_PREFIX = "<Reason>";
+const std::string USER_PREFIX = "<User>";
+const std::string DATE_PREFIX = "<Date>";
+const std::string MESSAGE_PREFIX = "<Message>";
+const std::string SEVERITY_PREFIX = "<Severity>";
+const std::string RULE_ID_PREFIX = "<RuleId>";
+const std::string VALID_DATA_PREFIX[VALID_DATA_PREFIX_SIZE] = {CONTEXT_PREFIX, REASON_PREFIX, USER_PREFIX, DATE_PREFIX, MESSAGE_PREFIX, SEVERITY_PREFIX, RULE_ID_PREFIX};
+
+const std::string START_SUPPRESSION_DATA_PREFIX = "<Suppression class";
+const std::string END_SUPPRESSION_DATA_PREFIX = "</Suppression>";
+
+const std::string BEGIN_SUPPRESSION_ENTRY = "suppression-begin";
+const std::string END_SUPPRESSION_ENTRY = "suppression-end";
+
+enum Severity
+{
+    UNINITIALIZED = -1,
+    ONE = 1,
+    TWO = 2,
+    THREE = 3,
+    FOUR = 4,
+    FIVE = 5
+};
+
+void parseData(std::string& validXMLData)
+{
+    int startPos = validXMLData.find(">") + 1;
+    int endPos = validXMLData.find("</");
+    int dataLength = endPos - startPos;
+    
+    validXMLData = validXMLData.substr(startPos, dataLength);
+}
+
+std::string locateData(std::vector<std::string>& XMLSuppressionData, const std::string& key)
+{
+    for(int suppressionDataLine = 0; suppressionDataLine < XMLSuppressionData.size(); suppressionDataLine++)
+    {
+        std::string currentDataLine = XMLSuppressionData[suppressionDataLine];
+        if(currentDataLine.find(key) != std::string::npos)
+        {
+            XMLSuppressionData.erase(XMLSuppressionData.begin() + suppressionDataLine);
+            return currentDataLine;
+        }
+    }
+    
+    return "";
+}
+
+bool collectXMLSuppressionData(std::ifstream& xmlFile, std::vector<std::string>& XMLSuppressionData)
+{
+    bool collectDataIntoVector = false;
+    bool collectedData = false;
+    
+    std::string currentLine;
+    
+    while(std::getline(xmlFile, currentLine))
+    {
+        if(currentLine.find(START_SUPPRESSION_DATA_PREFIX) != std::string::npos)
+        {
+            collectDataIntoVector = true;
+            collectedData = true;
+        }
+        
+        if(currentLine.find(END_SUPPRESSION_DATA_PREFIX) != std::string::npos)
+        {
+            XMLSuppressionData.push_back(currentLine);
+            break;
+        }
+        
+        if(collectDataIntoVector)
+        {
+            XMLSuppressionData.push_back(currentLine);
+        }
+    }
+    
+    return collectedData;
+}
+
+class XMLSuppression
+{
+    private:
+        std::string context;
+        std::string reason;
+        std::string user;
+        std::string date;
+        std::string message;
+        Severity severity;
+        std::string ruleId;
+        
+    public:
+        static int numberOfSuppressions;
+    public:
+        XMLSuppression()
+        {
+            severity = Severity::UNINITIALIZED;
+        }
+        XMLSuppression(std::string context, std::string reason, std::string user, std::string date, std::string message, Severity severity, std::string ruleId)
+        {
+            setXMLSuppression(context, reason, user, date, message, severity, ruleId);
+            numberOfSuppressions++;
+        }
+        XMLSuppression(std::vector<std::string>& XMLSuppressionData)
+        {
+            parseXMLSuppressionData(XMLSuppressionData);
+            numberOfSuppressions++;
+        }
+        
+        
+        void setXMLSuppression(std::string context, std::string reason, std::string user, std::string date, std::string message, Severity severity, std::string ruleId)
+        {
+            this->context = context;
+            this->reason = reason;
+            this->user = user;
+            this->date = date;
+            this->message = message;
+            this->severity = severity;
+            this->ruleId = ruleId;
+        }
+        
+        void setContext(std::string context)
+        {
+            this->context = context;
+        }
+        void setReason(std::string reason)
+        {
+            this->reason = reason;
+        }
+        void setUser(std::string user)
+        {
+            this->user = user;
+        }
+        void setDate(std::string date)
+        {
+            this->date = date;
+        }
+        void setMessage(std::string message)
+        {
+            this->message = message;
+        }
+        void setSeverity(std::string severity)
+        {
+            this->severity = static_cast<Severity>(std::stoi(severity));
+        }
+        void setRuleId(std::string ruleId)
+        {
+            this->ruleId = ruleId;
+        }
+        
+        
+        void parseXMLSuppressionData(std::vector<std::string>& XMLSuppressionData)
+        {
+            removeNonTransferrableData(XMLSuppressionData);
+            
+            extractValidData(XMLSuppressionData);
+        }
+        
+        void removeNonTransferrableData(std::vector<std::string>& XMLSuppressionData)
+        {
+            bool lineIsTransferrable = false;
+            
+            for(int suppressionDataLine = 0; suppressionDataLine < XMLSuppressionData.size(); suppressionDataLine++)
+            {
+                for(int validDataPrefixes = 0; validDataPrefixes < VALID_DATA_PREFIX_SIZE; validDataPrefixes++)
+                {
+                    std::string currentDataLine = XMLSuppressionData[suppressionDataLine];
+                    std::string currentValidDataPrefix = VALID_DATA_PREFIX[validDataPrefixes];
+                    
+                    if(currentDataLine.find(currentValidDataPrefix) != std::string::npos) //found match
+                    {
+                        lineIsTransferrable = true;
+                    }
+                }
+                
+                if(!lineIsTransferrable)
+                {
+                    XMLSuppressionData.erase(XMLSuppressionData.begin() + suppressionDataLine);
+                }
+            }
+            
+        }
+        
+        void extractValidData(std::vector<std::string>& XMLSuppressionData)
+        {
+            extractContext(XMLSuppressionData);
+            extractReason(XMLSuppressionData);
+            extractUser(XMLSuppressionData);
+            extractDate(XMLSuppressionData);
+            extractMessage(XMLSuppressionData);
+            extractSeverity(XMLSuppressionData);
+            extractRuleId(XMLSuppressionData);
+        }
+        
+        void extractContext(std::vector<std::string>& XMLSuppressionData)
+        {
+            std::string data = locateData(XMLSuppressionData, CONTEXT_PREFIX);
+            
+            int startPos;
+            int endPos = data.find("ctxStrg") - 1;
+    
+            char key = '/';
+    
+            for(int lineIndex = 0; lineIndex < data.size(); lineIndex++)
+            {
+                if(data[lineIndex] == key)
+                {
+                    startPos = lineIndex + 1;
+                }
+            }
+    
+            int fileLength = endPos - startPos;
+    
+            data = data.substr(startPos, fileLength);
+            
+            if(!isalpha(data[data.size() - 1]))
+            {
+                data = data.substr(0, data.size()-1);
+            }
+                
+            setContext(data);
+        }
+        
+        void extractReason(std::vector<std::string>& XMLSuppressionData)
+        {
+            std::string data = locateData(XMLSuppressionData, REASON_PREFIX);
+            parseData(data);
+            setReason(data);
+        }
+        
+        void extractUser(std::vector<std::string>& XMLSuppressionData)
+        {
+            std::string data = locateData(XMLSuppressionData, USER_PREFIX);
+            parseData(data);
+            setUser(data);
+        }
+        
+        void extractDate(std::vector<std::string>& XMLSuppressionData)
+        {
+            std::string data = locateData(XMLSuppressionData, DATE_PREFIX);
+            parseData(data);
+            setDate(data);
+        }
+        
+        void extractMessage(std::vector<std::string>& XMLSuppressionData)
+        {
+            std::string data = locateData(XMLSuppressionData, MESSAGE_PREFIX);
+            parseData(data);
+            setMessage(data);
+        }
+        
+        void extractSeverity(std::vector<std::string>& XMLSuppressionData)
+        {
+            std::string data = locateData(XMLSuppressionData, SEVERITY_PREFIX);
+            parseData(data);
+            setSeverity(data);
+        }
+        
+        void extractRuleId(std::vector<std::string>& XMLSuppressionData)
+        {
+            std::string data = locateData(XMLSuppressionData, RULE_ID_PREFIX);
+            parseData(data);
+            setRuleId(data);
+        }
+        
+        void print(std::ofstream& parasoft_suppress)
+        {
+            parasoft_suppress << BEGIN_SUPPRESSION_ENTRY << std::endl;
+            
+            parasoft_suppress << "file: " << context << std::endl;
+            
+            if(ruleId != "")
+            {
+                parasoft_suppress << "rule-id: " << ruleId << std::endl;
+            }
+            
+            if(message != "")
+            {
+                parasoft_suppress << "message: " << message << std::endl;
+            }
+            
+            if(reason != "")
+            {
+                parasoft_suppress << "reason: " << reason << std::endl;
+            }
+            
+            if(user != "")
+            {
+                parasoft_suppress << "author: " << user << std::endl;
+            }
+            
+            if(date != "")
+            {
+                parasoft_suppress << "date: " << date << std::endl;
+            }
+            
+            
+            parasoft_suppress << END_SUPPRESSION_ENTRY << std::endl << std::endl;
+        }
+};
+
+int XMLSuppression::numberOfSuppressions = 0;
+
+void ignoreHeaderLines(std::ifstream& xmlFile)
+{
+    std::string currentLine;
+    
+    for(int line = 0; line < NUMBER_OF_HEADER_LINES; line++)
+    {
+        std::getline(xmlFile, currentLine);
+    }
+
+}
+
+
+int main()
+{
+    
+    std::string inputFile = "fullSuppressionFile.xml";
+    std::string outputFile = "parasoft.suppress";
+
+    std::ifstream xmlFile(inputFile);
+    std::ofstream parasoftSuppressFile(outputFile);
+
+    if(xmlFile.fail())
+    {
+        std::cout << "Could not open file" << std::endl;
+        return 1;
+    }
+    
+    std::cout << "Migrating Team Server suppressions from " << inputFile << " into the file " << outputFile << std::endl << std::endl;
+    
+    std::vector<std::string> XMLSuppressionData;
+    
+    ignoreHeaderLines(xmlFile);
+    
+    
+    while(collectXMLSuppressionData(xmlFile, XMLSuppressionData))
+    {
+        XMLSuppression temp(XMLSuppressionData);
+        
+        temp.print(parasoftSuppressFile);
+    }
+    
+    std::cout << "Total number of suppressions migrated: " << XMLSuppression::numberOfSuppressions << std::endl;
+    
+    
+    xmlFile.close();
+    parasoftSuppressFile.close();
+    
+
+    return 0;
+
+}
