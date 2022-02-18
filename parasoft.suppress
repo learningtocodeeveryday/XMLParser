@@ -1,0 +1,648 @@
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_WRITE_BUFFER_SIZE' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_AUTOSELECT' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ6' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FORMAT-43
+message: Opening '{' and closing '}' braces are not placed in the same column
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_AT49_HARDLOCK_BLOCK_0' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FORMAT-03
+message: Put the closing brace '}' on its own line
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_PROGRAM' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_SUSPEND' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ7' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ0' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_ERASE_RESUME' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FORMAT-02
+message: Put the opening brace '{' on its own line
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FORMAT-20
+message: No single ASCII space character following ';' semicolon
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_DEVID3' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FIRMWARE-NAMING-03b
+message: The name 'dev' does not contain "p" prefix
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_DEVID2' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_END' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FORMAT-34
+message: Opening '{' and closing '}' should be in the same column
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ5' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_BLOCK_COUNT_LSB' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_ERASE_SUSPEND' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_AT49_HARDLOCK_BLOCK_1' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body '2RAM_EXIT_HOOK' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ2' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'SUFFIX' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FIRMWARE-FORMAT-01
+message: Line has over 120 characters
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_STATE' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'HAL_MEMORY_BARRIER' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_BLOCK_SIZE_MSB' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_SIZE' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_BEGIN' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_DEFAULT_END' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_COMMAND2' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_RESUME' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'TYPE' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ4' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_MANUFACTURER_ID' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_DEFAULT_STATE' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body '2RAM_ENTRY_HOOK' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_SETUP1' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ3' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'DEVCOUNT' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_ERASE' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_DEFAULT_SUSPEND' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'SUFFIX' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_SETUP2' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_ERASE_SECTOR' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FIRMWARE-NAMING-03b
+message: The name 'block_size' does not contain "p" prefix
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_DEFAULT_BEGIN' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'SWAP' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'NEXT_DATUM' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'ID_LOCKED' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_WRITE_TO_BUFFER' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_CFI' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102800
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_AT49_SOFTLOCK_BLOCK_0' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_AT49_SOFTLOCK_BLOCK_1' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_CFI' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_AT49_LOCK_STATUS' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102800
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FORMAT-42
+message: Put the opening brace '{' on its own line
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_BLOCK_SIZE_LSB' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_BLOCK_COUNT_MSB' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'UNSWAP' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'STATUS_DQ1' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: FIRMWARE-NAMING-03b
+message: The name 'block_start' does not contain "p" prefix
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_DEVID' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_Q' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'OFFSET_CFI_BLOCK_REGIONS' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: CODSTA-03
+message: Define constant 'OFFSET_COMMAND' using 'const' or 'enum' instead of '#define'
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'INTSCACHE_DEFAULT_RESUME' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102801
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_AT49_UNLOCK_BLOCK' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_RESET' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
+suppression-begin
+file: dummySourceFile.cpp
+rule-id: PREPROC-14
+message: Part of the macro body 'COMMAND_BUFFER_TO_FLASH' isn't in braces
+reason: Some Random Reason
+author: julio gutierrez
+date: 1553193102802
+suppression-end
+
